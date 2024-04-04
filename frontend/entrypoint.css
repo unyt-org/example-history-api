@@ -22,10 +22,12 @@ body {
 			display: flex;
 			justify-content: space-between;
 			div {
-				color: var(--green);
-				display: flex;
-				gap: 20px;
-				flex-wrap: wrap;
+				&:first-of-type {
+					color: var(--green);
+					display: flex;
+					gap: 20px;
+					flex-wrap: wrap;
+				}
 				h1 {
 					font-size: large;
 				}

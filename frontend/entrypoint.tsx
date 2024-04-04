@@ -1,34 +1,27 @@
 import { Icon } from "components/Defaults/Icon.tsx";
+import { Textarea } from "./Textarea.tsx";
 import { History } from "unyt_core/utils/history.ts";
+import { Entrypoint } from "uix/html/entrypoints.ts";
 
 // Initializing a pointer with the content of the LoremIpsum file
 const content = $$<string>(await datex.get("./LoremIpsum.txt"));
 
 // Creating history object with autosave
 const autoHistory = new History();
+const autoTextarea = <Textarea value={content}/>;
 autoHistory.add(content);
-
 
 // Creating history object without autosave
 const manualHistory = new History({explicitSavePoints: true});
+const manualTextarea = <Textarea value={content}/>;
 manualHistory.add(content);
 
-// Textarea element
-const textarea = <textarea spellcheck="false"/> as HTMLTextAreaElement;
+export default {
+	// Redirect to /auto route per default
+	'/': new URL("/auto", location.origin),
 
-effect(()=>{
-	// Effect gets triggered on pointer change
-	textarea.value = val(content);
-})
-textarea.addEventListener("input", (e) => {
-	// Event gets triggered on area input
-	content.setVal(textarea.value);
-	e.preventDefault();
-	e.stopPropagation();
-})
-
-export default
-	<main>
+	// Handling /auto route
+	'/auto': <main>
 		<header>
 			<div>
 				<h1>Auto</h1>
@@ -41,7 +34,16 @@ export default
 					<Icon name="fa-redo"/>
 				</span>
 			</div>
+			<div>
+				Go to <a href="/manual">/manual</a>
+			</div>
+		</header>
+		{autoTextarea}
+	</main>,
 
+	// Handle /manual route
+	'/manual': <main>
+		<header>
 			<div>
 				<h1>Manual</h1>
 				<span onclick:frontend={() => manualHistory.setSavePoint()}>
@@ -57,9 +59,10 @@ export default
 					<Icon name="fa-redo"/>
 				</span>
 			</div>
+			<div>
+				Go to <a href="/auto">/auto</a>
+			</div>
 		</header>
-		{textarea}
+		{manualTextarea}
 	</main>
-
-// @ts-ignore $
-globalThis.content = content;
+} satisfies Entrypoint;
