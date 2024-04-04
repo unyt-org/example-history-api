@@ -1,0 +1,3 @@
+name: "DATEX History API Example",
+description: "A history API example project",
+installable: true;
