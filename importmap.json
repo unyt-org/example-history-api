@@ -1,5 +1,6 @@
 {
     "imports": {
+        "components/": "https://cdn.unyt.org/uix-components-new@0.1.x/",
         "datex-core-legacy": "https://dev.cdn.unyt.org/unyt_core/datex.ts",
         "datex-core-legacy/": "https://dev.cdn.unyt.org/unyt_core/",
         "uix": "https://dev.cdn.unyt.org/uix1/uix.ts",
