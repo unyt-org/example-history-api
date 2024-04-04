@@ -1,7 +1,19 @@
-main {
-	input {
-		width: 100%;
-		height: 100%;
-		position: absolute;
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 20px;
+	main {
+		display: flex;
+		box-sizing: border-box;
+		flex: 1;
+		textarea {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+		}
 	}
 }
