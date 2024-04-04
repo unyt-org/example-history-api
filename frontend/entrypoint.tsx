@@ -1,5 +1,5 @@
 import { Icon } from "components/Defaults/Icon.tsx";
-import { History } from "datex-core-legacy/utils/history.ts";
+import { History } from "unyt_core/utils/history.ts";
 
 // Initializing a pointer with the content of the LoremIpsum file
 const content = $$<string>(await datex.get("./LoremIpsum.txt"));
