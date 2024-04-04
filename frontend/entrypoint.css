@@ -5,8 +5,10 @@ body {
 	height: 100vh;
 	display: flex;
 	margin: 0;
+	overflow: hidden;
 	padding: 20px;
 	main {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		flex: 1;
@@ -15,18 +17,28 @@ body {
 			border: 1px solid var(--border);
 			border-radius: 10px 10px 0px 0px;
 			border-bottom: 0;
-			padding: 10px;
+			padding: 10px 20px;
+			flex-direction: row;
 			display: flex;
-			gap: 20px;
-			span {
-				font-size: large;
+			justify-content: space-between;
+			div {
+				color: var(--green);
 				display: flex;
-				justify-content: center;
-				align-items: center;
-				gap: 6px;
-				cursor: pointer;
-				&:hover {
-					opacity: 0.8;
+				gap: 20px;
+				flex-wrap: wrap;
+				h1 {
+					font-size: large;
+				}
+				span {
+					font-size: large;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 6px;
+					cursor: pointer;
+					&:hover {
+						opacity: 0.8;
+					}
 				}
 			}
 		}
@@ -38,6 +50,8 @@ body {
 			height: 100%;
 			box-sizing: border-box;
 			outline: none!important;
+			resize: none;
+			padding: 10px 20px;
 		}
 	}
 }
