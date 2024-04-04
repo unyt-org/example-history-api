@@ -1,8 +1,7 @@
 # DATEX History API Example
 
-This is a example project demonstrating how to use the History API of DATEX.
+This is a example project demonstrating how to use the [History API](https://docs.unyt.org/manual/datex/history) of DATEX.
 The API provides a way to undo and redo state changes of one or multiple pointers.
-
 
 ## Usage
 The history for a pointer can be managed by creating a new History object and adding the pointer to the history:
