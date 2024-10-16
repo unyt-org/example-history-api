@@ -1,4 +1,4 @@
-import { type Pointer } from "unyt_core/datex_all.ts";
+import { type Pointer } from "datex-core-legacy/datex_all.ts";
 
 // Textarea functional component
 export const Textarea = template<{value: any}>(({value}: {value: Pointer<string>}) => {

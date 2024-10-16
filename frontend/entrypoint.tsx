@@ -1,7 +1,7 @@
 import { Icon } from "components/Defaults/Icon.tsx";
 import { Textarea } from "./Textarea.tsx";
-import { History } from "unyt_core/utils/history.ts";
-import { Entrypoint } from "uix/html/entrypoints.ts";
+import { History } from "datex-core-legacy/utils/history.ts";
+import { Entrypoint } from "uix/providers/entrypoints.ts";
 
 // Initializing a pointer with the content of the LoremIpsum file
 const content = $$<string>(await datex.get("./LoremIpsum.txt"));
